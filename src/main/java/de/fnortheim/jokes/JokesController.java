@@ -1,6 +1,6 @@
 package de.fnortheim.jokes;
 
-import de.fnortheim.jokes.service.JokesService;
+import de.fnortheim.jokes.service.JokeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class JokesController {
 
-    private JokesService jokesService;
+    private JokeService jokesService;
 
-    public JokesController(JokesService jokesService) {
+    public JokesController(JokeService jokesService) {
         this.jokesService = jokesService;
     }
 
-    @GetMapping("/")
+    @GetMapping({"/", ""})
     public String getView(Model model) {
         model.addAttribute("joke", jokesService.getJoke());
 
