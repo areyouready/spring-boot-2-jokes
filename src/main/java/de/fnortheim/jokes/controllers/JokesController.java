@@ -1,4 +1,4 @@
-package de.fnortheim.jokes;
+package de.fnortheim.jokes.controllers;
 
 import de.fnortheim.jokes.service.JokeService;
 import org.springframework.stereotype.Controller;
